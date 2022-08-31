@@ -9,6 +9,11 @@ An open source pizza-ordering web application.
 - [ ] Basic application styling.
 - [ ] A customer can submit an order, edit an order, and cancel submitted orders.
 
+# Contributing
+Fancy yourself an aficionadough? We'd love to have you contribute to this project.
+Please create an issue for any changes you would like to see under the "Issues" tab above.
+Fork the repo, clone it to your machine, create a new branch for your changes, make your changes, push the changes to your fork, then submit a pull request.
+
 # Setup
 The following instructions assume you already have an IDE installed on your computer and know your way around MongoDB Atlas.
 
@@ -19,8 +24,10 @@ To get Crustomer running on your local machine, you will need to do the followin
 3. Run "npm install". This will download all the node modules needed to run the software.
 4. Configure a .env file.
     1. The format should look something like the following:
+        ```
         PORT = 2121
         DB_STRING = [MONGODB ATLAS STRING]
+        ```
     2. The file should be saved in config/.env.
 5. In your IDE terminal, run "npm start".
 6. In a web browser, navigate to localhost:2121 (or whatever port you chose in your .env file).
