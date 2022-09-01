@@ -5,9 +5,14 @@ const PizzaSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  completed: {
-    type: Boolean,
-    required: true,
+  toppings: {
+    type: Array,
+    default: [],
+    required: false
+  },
+  price: {
+    type: Number,
+    required: false
   },
   userId: {
     type: String,
