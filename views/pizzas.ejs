@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crustomer</title>
     <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Pizzas</h1>
@@ -14,6 +14,7 @@
     <% pizzas.forEach( el => { %>
             <li class='pizzaItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
+                <span><%= el.price %></span>
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
@@ -28,17 +29,27 @@
     </form>
 
     <form action="/pizzas/createPizza" method="POST">
-        <div>
-            <p>Or Choose a Premade Pizza!</p>
+        <p>Or Choose a Premade Pizza!</p>
+        <div class="menu">
             
-            <input id="pepperoni" type="radio" name="pizzaItem" value="pepperoni">
-            <label for="pepperoni">Pepperoni</label>
+            <div class="menuItem">
+                <div class="menuText">
+                    <input id="pepperoni" type="radio" name="pizzaItem" value="pepperoni">
+                    <label for="pepperoni">Pepperoni</label><span>: $15</span>
+                 </div>
+                <img class="pizzaImage" src="https://thumbs.dreamstime.com/b/pepperoni-pizza-thinly-sliced-popular-topping-american-style-pizzerias-30402134.jpg" alt="pepperoni pizza">
+            </div>
 
-            <input id="chicken" type="radio" name="pizzaItem" value="chicken">
-            <label for="chicken">Chicken</label>
-
-            <input type="submit">
+            <div class="menuItem">
+                <div class="menuText">
+                    <input id="chicken" type="radio" name="pizzaItem" value="chicken">
+                    <label for="chicken">Chicken</label><span>: $18</span>
+                </div>
+                <img class="pizzaImage" src="https://www.pizzakmarietta.com/wp-content/uploads/2019/09/bbq-chicken-backed.jpg" alt="chicken pizza">
+            </div>
+            
         </div>
+        <button id="submit-btn" type="submit">Submit</button>
     </form>
 
     <a href="/logout">Logout</a>
