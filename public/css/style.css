@@ -2,24 +2,37 @@
     box-sizing: border-box;
 }
 
-
+nav {
+    background: lightgrey;
+}
 
 .menu {
+    width: 100%;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-.menuItem {
-    width: 300px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.menuText {
-    display: flex;
-}
+    .menu .card {
+        flex-direction: column;
+        width: 300px;
+        height: 100%;
+        border: 1px solid black;
 
-.pizzaImage {
-    height: 250px;
-}
+    }
+
+        .card .itemInfo {
+            background: lightgrey;
+        }
+
+        .card .price {
+            font-size: large;
+            font-weight: 600;
+        }
+
+        .card .productImage {
+            height: 250px;
+        }
 
 
