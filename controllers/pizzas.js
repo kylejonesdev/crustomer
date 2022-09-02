@@ -13,7 +13,22 @@ module.exports = {
     },
     createPizza: async (req, res)=>{
         try{
-            await Pizza.create({pizza: req.body.pizzaItem, completed: false, userId: req.user.id})
+
+            // For premade pizzas, assign specific values
+            switch(req.body.pizzaItem) {
+                case 'pepperoni':
+                    req.body.pizzaPrice = 15;
+                    req.body.pizzaToppings = ['pepperoni'];
+                    break;
+                case 'chicken':
+                    req.body.pizzaPrice = 18;
+                    req.body.pizzaToppings = ['chicken'];
+                    break;
+                default:
+                    break;
+            }
+        
+            await Pizza.create({pizza: req.body.pizzaItem, toppings: req.body.pizzaToppings, price: req.body.pizzaPrice, userId: req.user.id})
             console.log('Pizza has been added!')
             res.redirect('/pizzas')
         }catch(err){
