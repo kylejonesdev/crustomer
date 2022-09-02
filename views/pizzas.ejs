@@ -25,6 +25,20 @@
         <input type="submit">
     </form>
 
+    <form action="/pizzas/createPizza" method="POST">
+        <div>
+            <p>Or Choose a Premade Pizza!</p>
+            
+            <input id="pepperoni" type="radio" name="pizzaItem" value="pepperoni">
+            <label for="pepperoni">Pepperoni</label>
+
+            <input id="chicken" type="radio" name="pizzaItem" value="chicken">
+            <label for="chicken">Chicken</label>
+
+            <input type="submit">
+        </div>
+    </form>
+
     <a href="/logout">Logout</a>
 
     <script src="js/main.js"></script>
