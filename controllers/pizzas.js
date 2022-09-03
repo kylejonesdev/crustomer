@@ -18,23 +18,24 @@ module.exports = {
             switch(req.body.pizzaItem) {
                 case 'pepperoni':
                     req.body.pizzaPrice = 15;
-                    req.body.pizzaToppings = ['pepperoni'];
+                    // req.body.pizzaToppings = 'Pepperoni';
                     break;
                 case 'chicken':
                     req.body.pizzaPrice = 18;
-                    req.body.pizzaToppings = ['chicken'];
+                    // req.body.pizzaToppings = 'Chicken';
                     break;
                 default:
                     break;
             }
         
-            await Pizza.create({pizza: req.body.pizzaItem, toppings: req.body.pizzaToppings, price: req.body.pizzaPrice, userId: req.user.id})
+            await Pizza.create({pizza: req.body.pizzaItem, toppings: req.body.topping, price: req.body.pizzaPrice, userId: req.user.id})
             console.log('Pizza has been added!')
             res.redirect('/pizzas')
         }catch(err){
             console.log(err)
         }
     },
+
     markComplete: async (req, res)=>{
         try{
             await Pizza.findOneAndUpdate({_id:req.body.pizzaIdFromJSFile},{

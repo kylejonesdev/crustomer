@@ -23,6 +23,7 @@
                     <li class='pizzaItem' data-id='<%=el._id%>'>
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
                         <span><%= el.price %></span>
+                        <span><%= el.toppings.join(', ') %></span>
                         <span class='del'> Delete </span>
                     </li>
             <% }) %> 
@@ -44,6 +45,10 @@
                             <div>
                                 <input id="pepperoni" type="radio" name="pizzaItem" value="pepperoni">
                                 <label for="pepperoni">Pepperoni</label>
+                                <input type="checkbox" value="Extra Cheese" name="topping">
+                                <label for="extraCheese">Extra Cheese</label>
+                                <input type="checkbox" value="Pepper Flakes" name="topping">
+                                <label for="extraCheese">Pepper Flakes</label>
                             </div>
                         </div>
                     </div>
@@ -59,6 +64,10 @@
                             <div>
                                 <input id="chicken" type="radio" name="pizzaItem" value="chicken">
                                 <label for="chicken">Chicken</label>
+                                <input type="checkbox" value="Extra Cheese" name="topping">
+                                <label for="extraCheese">Extra Cheese</label>
+                                <input type="checkbox" value="Pepper Flakes" name="topping">
+                                <label for="extraCheese">Pepper Flakes</label>
                             </div>
                         </div>
                     </div>       
