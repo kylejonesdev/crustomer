@@ -59,6 +59,6 @@ nav {
 }
 
 .pizzaChoice input[type= "radio" ]:checked + label {
-    background-color:rgb(255, 197, 187);
+    background-color: #F5BA5E;
     border-color: rgb(204, 122, 68);
 }
