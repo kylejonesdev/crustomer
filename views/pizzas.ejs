@@ -23,6 +23,7 @@
                     <li class='pizzaItem' data-id='<%=el._id%>'>
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
                         <span><%= el.price %></span>
+                        <span><%= el.toppings.join(', ') %></span>
                         <span class='del'> Delete </span>
                     </li>
             <% }) %> 
@@ -41,9 +42,10 @@
                                 <p>Our prize-winning pepperoni will have your mouth watering more than the little pools of grease in each meaty cup.</p>
                             </div>
                             <span class="price">$15</span>
-                            <div>
+                            <div class="pizzaChoice">
                                 <input id="pepperoni" type="radio" name="pizzaItem" value="pepperoni">
                                 <label for="pepperoni">Pepperoni</label>
+                                
                             </div>
                         </div>
                     </div>
@@ -56,12 +58,19 @@
                                 <p>Our chicken is seasoned with a secret blend of one thousand herbs and spices. Add to that our awesome BBQ-based pizza sauce with even more seasoning, and you have yourself a one-way ticket to Flavortown!</p>
                             </div>
                             <span class="price">$18</span>
-                            <div>
+                            <div class="pizzaChoice">
                                 <input id="chicken" type="radio" name="pizzaItem" value="chicken">
                                 <label for="chicken">Chicken</label>
+                                
                             </div>
                         </div>
-                    </div>       
+                    </div>    
+                </div>
+                <div class="toppings">
+                    <input id="extraCheese" type="checkbox" value="Extra Cheese" name="topping">
+                    <label for="extraCheese">Extra Cheese</label>
+                    <input id="pepperFlakes" type="checkbox" value="Pepper Flakes" name="topping">
+                    <label for="pepperFlakes">Pepper Flakes</label>   
                 </div>
                 <div>
                     <button id="submit-btn" type="submit">Submit Order</button>
