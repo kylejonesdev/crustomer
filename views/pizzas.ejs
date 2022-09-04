@@ -19,7 +19,6 @@
         <section>
             <h1>Your Order</h1>
             <ul>
-            <% let priceArr = [] %>
             <% pizzas.forEach( el => { %>
                     <li class='pizzaItem' data-id='<%=el._id%>'>
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
@@ -27,10 +26,8 @@
                         <span><%= el.toppings.join(', ') %></span>
                         <span class='del'> Delete </span>
                     </li>
-                    <% priceArr.push(el.price) %>
             <% }) %> 
             </ul>
-            <h3>Total: $<%= priceArr.reduce((a, b) => (a + b), 0) %></h3>
         </section>
         <section>
             <form action="/pizzas/createPizza" method="POST">
