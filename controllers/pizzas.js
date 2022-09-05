@@ -13,15 +13,19 @@ module.exports = {
     },
     createPizza: async (req, res)=>{
         try{
-
+            // adds USD currency to price
+            let currency = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+            })
             // For premade pizzas, assign specific values
             switch(req.body.pizzaItem) {
                 case 'pepperoni':
-                    req.body.pizzaPrice = 15;
+                    req.body.pizzaPrice = currency.format(15);
                     // req.body.pizzaToppings = 'Pepperoni';
                     break;
                 case 'chicken':
-                    req.body.pizzaPrice = 18;
+                    req.body.pizzaPrice = currency.format(18);
                     // req.body.pizzaToppings = 'Chicken';
                     break;
                 default:
