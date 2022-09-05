@@ -27,7 +27,7 @@
             <% pizzas.forEach( el => { %>
                     <li class='pizzaItem' data-id='<%=el._id%>'>
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
-                        <span><%= el.price %></span>
+                        <span> $<%= el.price %></span>
                         <span><%= el.toppings.join(', ') %></span>
                         <span class='del'> X </span>
                     </li>
