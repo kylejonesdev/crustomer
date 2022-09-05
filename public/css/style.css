@@ -185,4 +185,16 @@ nav p {
     font-weight: bold;
     background-color: #2E4F2C;
     color: white;
+    cursor: pointer;
+}
+
+.del {
+    color: red;
+    cursor: pointer;
+}
+
+#total {
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
