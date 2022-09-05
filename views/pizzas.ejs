@@ -11,14 +11,18 @@
 <body>
     <header>
         <nav>
-            <p>Welcome, <%= user.userName %>!</p>
-            <a href="/logout">Logout</a>
+            <img src="img/logo.png" alt="" class="logo">
+            <h2>PLACE YOUR ORDER</h2>
+            <div class="welcome">
+                <p>Welcome, <%= user.userName %>!</p>
+                <a href="/logout">Logout</a>
+            </div>
         </nav>
     </header>
     <main>
         <section>
-            <h1>Your Order</h1>
-            <ul>
+            <h2 class="orderHead">Your Order</h2>
+            <ul class="orderList shadow">
             <% pizzas.forEach( el => { %>
                     <li class='pizzaItem' data-id='<%=el._id%>'>
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
@@ -31,14 +35,13 @@
         </section>
         <section>
             <form action="/pizzas/createPizza" method="POST">
-                <h1>Menu</h1>
+                <h1 class="menuHead">Menu</h1>
                 <div class="menu">            
-                    <div class="card">
-                        <img class="productImage" src="https://thumbs.dreamstime.com/b/pepperoni-pizza-thinly-sliced-popular-topping-american-style-pizzerias-30402134.jpg" alt="pepperoni pizza">
+                    <div class="card shadow">
+                        <img class="productImage" src="img/pepperoni-pizza.png" alt="pepperoni pizza">
                         <div class="itemInfo">
-                            <h2>Pepperoni</h2>
+                            <h2 class="itemName">Pepperoni</h2>
                             <div class="description">
-                                <h3>Description</h3>
                                 <p>Our prize-winning pepperoni will have your mouth watering more than the little pools of grease in each meaty cup.</p>
                             </div>
                             <span class="price">$15</span>
@@ -49,12 +52,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card">
-                        <img class="productImage" src="https://www.pizzakmarietta.com/wp-content/uploads/2019/09/bbq-chicken-backed.jpg" alt="chicken pizza">
+                    <div class="card shadow">
+                        <img class="productImage" src="img/bbq-chicken-pizza.png" alt="chicken pizza">
                         <div class="itemInfo">
-                            <h2>Chicken</h2>
+                            <h2 class="itemName">Chicken</h2>
                             <div class="description">
-                                <h3>Description</h3>
                                 <p>Our chicken is seasoned with a secret blend of one thousand herbs and spices. Add to that our awesome BBQ-based pizza sauce with even more seasoning, and you have yourself a one-way ticket to Flavortown!</p>
                             </div>
                             <span class="price">$18</span>
@@ -72,8 +74,8 @@
                     <input id="pepperFlakes" type="checkbox" value="Pepper Flakes" name="topping">
                     <label for="pepperFlakes">Pepper Flakes</label>   
                 </div>
-                <div>
-                    <button id="submit-btn" type="submit">Submit Order</button>
+                <div class="buttonHolder">
+                    <button id="submit-btn" type="submit" class="addToOrder">Add to Order</button>
                 </div>
             </form>
         </section>
