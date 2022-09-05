@@ -2,8 +2,89 @@
     box-sizing: border-box;
 }
 
+.shadow {
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  }
+
+button {
+    all: unset;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: white;
+    background: url(../img/bg.jpg);
+    background-size: cover;
+    background-position: -5rem;
+    font-family: sans-serif;
+    width: 100%;
+    margin: 0;
+  }
+
 nav {
-    background: lightgrey;
+    background-color: #2E4F2C;
+    display: grid;
+    grid-template-columns: 35% 35% 30%;
+    font-size: 2rem;
+}
+
+.logo {
+    width: 25%;
+    padding: 1rem;
+}
+
+nav h2 {
+    align-self: center;
+}
+
+nav a {
+    color: #F5BA5E;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+nav p {
+    text-align: center;
+}
+
+.welcome {
+    justify-self: end;
+    display: flex;
+    background-color: #718a70;
+    height: fit-content;
+    padding-left: 2rem;
+    border-radius: 0 0 0 10px;
+    margin-top: 0;
+}
+
+.orderList {
+    background:rgba(113, 138, 112, 0.5);
+    padding: 2rem 0 2rem 38%;
+    font-size: 1.6rem;
+    line-height: 2.3rem;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.orderHead {
+    font-size: 3rem;
+    background-color: #718a70;
+    text-transform: uppercase;
+    padding: 1rem;
+    margin: 0;
+}
+
+.menuHead {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #D77E19;
+    padding: 2rem;
 }
 
 .menu {
@@ -15,31 +96,52 @@ nav {
 }
 
     .menu .card {
+        display: flex;
         flex-direction: column;
         width: 300px;
         height: 100%;
-        border: 1px solid black;
-
+        border: .5rem solid #2E4F2C;
+        border-radius: 10px;
     }
 
+        .card .itemName {
+            background-color: #2E4F2C;
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+        }
+
         .card .itemInfo {
-            background: lightgrey;
+            background: #D77E19;
+        }
+
+        .card .description {
+            padding: 1rem;
+            font-size: 1.3rem;
         }
 
         .card .price {
             font-size: large;
             font-weight: 600;
+            padding: 1rem;
         }
 
         .card .productImage {
             height: 250px;
+            align-self: center;
         }
-
 
 .toppings {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 2rem;
+}
+
+.pizzaChoice {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .pizzaChoice input[type = "radio"],
@@ -52,17 +154,35 @@ nav {
 .pizzaChoice label,
 .toppings label {
     display: inline-block;
-    background-color: #ddd;
+    text-transform: uppercase;
+    background-color:#2E4F2C;
     padding: .5rem 1rem;
     font-family: sans-serif, Arial;
-    font-size: 1rem;
+    font-weight: bold;
+    font-size: 1.25rem;
     border: 2px solid #444;
     border-radius: 4px;
     cursor: pointer;
+    align-self: center;
+    margin: 1rem;
 }
 
 .pizzaChoice input[type= "radio" ]:checked + label,
 .toppings input:checked + label {
     background-color: #F5BA5E;
     border-color: rgb(204, 122, 68);
+}
+
+.buttonHolder {
+    text-align: center;
+    margin: 2rem;
+}
+
+.addToOrder {
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #2E4F2C;
+    color: white;
 }
