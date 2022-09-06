@@ -7,9 +7,11 @@ router.get('/', ensureAuth, pizzasController.getPizzas)
 
 router.post('/createPizza', pizzasController.createPizza)
 
-router.put('/markComplete', pizzasController.markComplete)
+router.put('/deleteIngredient', pizzasController.deleteIngredient)
 
-router.put('/markIncomplete', pizzasController.markIncomplete)
+// router.put('/markComplete', pizzasController.markComplete)
+
+// router.put('/markIncomplete', pizzasController.markIncomplete)
 
 router.delete('/deletePizza', pizzasController.deletePizza)
 

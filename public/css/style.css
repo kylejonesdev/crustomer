@@ -67,8 +67,15 @@ nav p {
     padding: 2rem 0 2rem 38%;
     font-size: 1.6rem;
     line-height: 2.3rem;
-    text-transform: uppercase;
     list-style: none;
+}
+
+.orderList .pizzaItem{
+    text-transform: uppercase;
+}
+
+.tiny{
+    font-size: 1rem;
 }
 
 .orderHead {
