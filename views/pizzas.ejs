@@ -26,12 +26,13 @@
             <% let priceArr = [] %>
             <% pizzas.forEach( el => { %>
                     <li class='pizzaItem' data-id='<%=el._id%>'>
-                        <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
-                        <span> $<%= el.price %></span>
+                        <span><%= el.size %></span>
+                        <span class='pizzaName'><%= el.pizza %></span>
+                        <span>$<%= el.price %></span>
+                        <span class='del'> X </span>
                         <% el.toppings.forEach(item => { %>
                             <span class="ingredient"><%= item %></span>
-                        <% }) %>
-                        <span class='del'> X </span>
+                        <% }) %>                        
                     </li>
                     <% priceArr.push(el.price) %>
             <% }) %>
@@ -67,7 +68,7 @@
                             </div>
                             <span class="price">$12</span>
                             <div class="pizzaChoice">
-                                <input id="cheese" type="radio" name="pizzaItem" value="cheese">
+                                <input id="cheese" type="radio" name="pizzaItem" value="Cheese Pizza">
                                 <label for="cheese">Cheese</label>
                                 
                             </div>

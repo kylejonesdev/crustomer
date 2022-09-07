@@ -20,9 +20,9 @@ module.exports = {
                     req.body.pizzaPrice = 15;
                     toppingsArr.push("pepperoni");
                     break;
-                case 'cheese':
+                case 'Cheese Pizza':
                     req.body.pizzaPrice = 12;
-                    // req.body.pizzaToppings = 'Cheese';
+                    toppingsArr.push("cheese");
                     break;
                 case 'Chicken Pizza':
                     req.body.pizzaPrice = 18;
@@ -31,9 +31,6 @@ module.exports = {
                 default:
                     break;
             }      
-            await Pizza.create({pizza: req.body.pizzaItem, toppings: req.body.topping, size: req.body.size, price: req.body.pizzaPrice, userId: req.user.id})
-            console.log('Pizza has been added!')
-
             //Ingredients returns a string when one custom ingredient is added, but an array if more than one ingredient is added.
             //The below is hacky garbage to address this.
             if(req.body.toppings) {
@@ -44,6 +41,7 @@ module.exports = {
                 {
                     pizza: req.body.pizzaItem,
                     toppings: toppingsArr,
+                    size: req.body.size,
                     price: req.body.pizzaPrice,
                     userId: req.user.id
                 }
