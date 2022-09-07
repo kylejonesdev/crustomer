@@ -138,6 +138,13 @@ nav p {
     margin-top: 2rem;
 }
 
+.size {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
 .pizzaChoice {
     display: flex;
     flex-direction: column;
@@ -145,14 +152,16 @@ nav p {
 }
 
 .pizzaChoice input[type = "radio"],
-.toppings input[type = "checkbox" ] {
+.toppings input[type = "checkbox" ],
+.size input[type = "radio" ] {
     opacity: 0;
     position: fixed;
     width: 0;
 }
 
 .pizzaChoice label,
-.toppings label {
+.toppings label,
+.size label {
     display: inline-block;
     text-transform: uppercase;
     background-color:#2E4F2C;
@@ -168,7 +177,8 @@ nav p {
 }
 
 .pizzaChoice input[type= "radio" ]:checked + label,
-.toppings input:checked + label {
+.toppings input:checked + label,
+.size input:checked + label {
     background-color: #F5BA5E;
     border-color: rgb(204, 122, 68);
 }

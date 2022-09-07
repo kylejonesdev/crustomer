@@ -29,6 +29,7 @@
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
                         <span> $<%= el.price %></span>
                         <span><%= el.toppings.join(', ') %></span>
+                        <span> <%= el.size %></span>
                         <span class='del'> X </span>
                     </li>
                     <% priceArr.push(el.price) %>
@@ -56,6 +57,21 @@
                         </div>
                     </div>
                     <div class="card shadow">
+                        <img class="productImage" src="img/cheese-pizza.png" alt="cheese pizza">
+                        <div class="itemInfo">
+                            <h2 class="itemName">Cheese</h2>
+                            <div class="description">
+                                <p>A classic cheese pizza is the ultimate crowd-pleaser. The delicious combination of crispy pizza crust, flavorful tomato sauce, and bubbly cheese make for an unbeatable combination.</p>
+                            </div>
+                            <span class="price">$12</span>
+                            <div class="pizzaChoice">
+                                <input id="cheese" type="radio" name="pizzaItem" value="cheese">
+                                <label for="cheese">Cheese</label>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow">
                         <img class="productImage" src="img/bbq-chicken-pizza.png" alt="chicken pizza">
                         <div class="itemInfo">
                             <h2 class="itemName">Chicken</h2>
@@ -76,6 +92,14 @@
                     <label for="extraCheese">Extra Cheese</label>
                     <input id="pepperFlakes" type="checkbox" value="Pepper Flakes" name="topping">
                     <label for="pepperFlakes">Pepper Flakes</label>   
+                </div>
+                <div class="size">
+                    <input id="small" type="radio" value="Small" name="size">
+                    <label for="small">Small</label>
+                    <input id="medium" type="radio" value="Medium" name="size">
+                    <label for="medium">Medium</label>
+                    <input id="large" type="radio" value="Large" name="size">
+                    <label for="large">Large</label>   
                 </div>
                 <div class="buttonHolder">
                     <button id="submit-btn" type="submit" class="addToOrder">Add to Order</button>

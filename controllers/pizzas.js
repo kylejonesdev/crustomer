@@ -20,6 +20,10 @@ module.exports = {
                     req.body.pizzaPrice = 15;
                     // req.body.pizzaToppings = 'Pepperoni';
                     break;
+                case 'cheese':
+                    req.body.pizzaPrice = 12;
+                    // req.body.pizzaToppings = 'Cheese';
+                    break;
                 case 'chicken':
                     req.body.pizzaPrice = 18;
                     // req.body.pizzaToppings = 'Chicken';
@@ -28,7 +32,7 @@ module.exports = {
                     break;
             }
         
-            await Pizza.create({pizza: req.body.pizzaItem, toppings: req.body.topping, price: req.body.pizzaPrice, userId: req.user.id})
+            await Pizza.create({pizza: req.body.pizzaItem, toppings: req.body.topping, size: req.body.size, price: req.body.pizzaPrice, userId: req.user.id})
             console.log('Pizza has been added!')
             res.redirect('/pizzas')
         }catch(err){
