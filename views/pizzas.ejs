@@ -28,12 +28,14 @@
                     <li class='pizzaItem' data-id='<%=el._id%>'>
                         <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.pizza %></span>
                         <span> $<%= el.price %></span>
-                        <span><%= el.toppings.join(', ') %></span>
-                        <span> <%= el.size %></span>
+                        <% el.toppings.forEach(item => { %>
+                            <span class="ingredient"><%= item %></span>
+                        <% }) %>
                         <span class='del'> X </span>
                     </li>
                     <% priceArr.push(el.price) %>
-            <% }) %> 
+            <% }) %>
+            <p class="tiny">Changed your mind? Click a topping above to delete it.</p>
             </ul>
             <h3 id="total">Total: $<%=priceArr.reduce((a, b) => (a + b), 0) %></h3>
         </section>
@@ -50,7 +52,7 @@
                             </div>
                             <span class="price">$15</span>
                             <div class="pizzaChoice">
-                                <input id="pepperoni" type="radio" name="pizzaItem" value="pepperoni">
+                                <input id="pepperoni" type="radio" name="pizzaItem" value="Pepperoni Pizza">
                                 <label for="pepperoni">Pepperoni</label>
                                 
                             </div>
@@ -80,7 +82,7 @@
                             </div>
                             <span class="price">$18</span>
                             <div class="pizzaChoice">
-                                <input id="chicken" type="radio" name="pizzaItem" value="chicken">
+                                <input id="chicken" type="radio" name="pizzaItem" value="Chicken Pizza">
                                 <label for="chicken">Chicken</label>
                                 
                             </div>
@@ -88,9 +90,9 @@
                     </div>    
                 </div>
                 <div class="toppings">
-                    <input id="extraCheese" type="checkbox" value="Extra Cheese" name="topping">
+                    <input id="extraCheese" type="checkbox" value="extra cheese" name="toppings">
                     <label for="extraCheese">Extra Cheese</label>
-                    <input id="pepperFlakes" type="checkbox" value="Pepper Flakes" name="topping">
+                    <input id="pepperFlakes" type="checkbox" value="pepper flakes" name="toppings">
                     <label for="pepperFlakes">Pepper Flakes</label>   
                 </div>
                 <div class="size">

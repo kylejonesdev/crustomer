@@ -1,6 +1,6 @@
 const deleteBtn = document.querySelectorAll('.del')
 const pizzaItem = document.querySelectorAll('span.not')
-const pizzaComplete = document.querySelectorAll('span.completed')
+const ingredientListItem = document.querySelectorAll('span.ingredient')
 
 Array.from(deleteBtn).forEach((el)=>{
     el.addEventListener('click', deletePizza)
@@ -10,8 +10,8 @@ Array.from(pizzaItem).forEach((el)=>{
     el.addEventListener('click', markComplete)
 })
 
-Array.from(pizzaComplete).forEach((el)=>{
-    el.addEventListener('click', markIncomplete)
+Array.from(ingredientListItem).forEach((el)=>{
+    el.addEventListener('click', deleteIngredient)
 })
 
 async function deletePizza(){
@@ -29,6 +29,23 @@ async function deletePizza(){
         location.reload()
     }catch(err){
         console.log(err)
+    }
+}
+
+async function deleteIngredient(e) {
+    const pizzaId = this.parentNode.dataset.id;
+    try {
+        const res = await fetch('pizzas/deleteIngredient', {
+            method: 'put',
+            headers: {'Content-type': 'application/json'},
+            body: JSON.stringify({
+                'pizzaIdFromJSFile': pizzaId,
+                'ingredientName': e.target.innerText
+            })
+        })
+        location.reload();
+    }catch(err){
+        console.log(err);
     }
 }
 
