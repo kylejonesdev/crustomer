@@ -215,3 +215,15 @@ nav p {
     text-align: center;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
+
+.ingredient{
+    cursor: pointer;
+    color: #ffc76d;
+}
+.ingredient:after { 
+    content: ", " 
+}
+
+.ingredient:last-of-type:after { 
+    content: "" 
+}
